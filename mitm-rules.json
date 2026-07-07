@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "my-rule",
+      "match": {
+        "hostSuffix": "island.is",
+        "pathPrefix": "/api/",
+        "methods": ["GET"]
+      },
+      "request": {
+        "setHeaders": { "X-Mock": "1" },
+        "removeHeaders": ["Authorization"],
+        "headerRegex": [{ "pattern": "090605", "replacement": "000000" }],
+        "replaceBody": "{\"mock\":true}",
+        "bodyRegex": [{ "pattern": "old", "replacement": "new" }],
+        "jsonPatch": { "enabled": true }
+      },
+      "response": {
+        "setHeaders": { "X-Rewritten": "1" },
+        "replaceBody": "...",
+        "bodyRegex": [],
+        "jsonPatch": { "field": "value" }
+      }
+    }
+  ]
+}
