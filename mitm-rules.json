@@ -1,26 +1,15 @@
 {
-  "version": 1,
+  "version": 2,
+  "comment": "island.is / landsbankinn.is / arionbanki.is: 090605 -> 000000",
   "rules": [
     {
-      "id": "my-rule",
+      "id": "island-banks-http-response",
       "match": {
-        "hostSuffix": "island.is",
-        "pathPrefix": "/api/",
-        "methods": ["GET"]
-      },
-      "request": {
-        "setHeaders": { "X-Mock": "1" },
-        "removeHeaders": ["Authorization"],
-        "headerRegex": [{ "pattern": "090605", "replacement": "000000" }],
-        "replaceBody": "{\"mock\":true}",
-        "bodyRegex": [{ "pattern": "old", "replacement": "new" }],
-        "jsonPatch": { "enabled": true }
+        "urlRegex": "^https?:\\/\\/(?:[^\\/]+\\.)?(?:island\\.is|landsbankinn\\.is|arionbanki\\.is)(?:[:\\/?#]|$)"
       },
       "response": {
-        "setHeaders": { "X-Rewritten": "1" },
-        "replaceBody": "...",
-        "bodyRegex": [],
-        "jsonPatch": { "field": "value" }
+        "headerRegex": [{ "pattern": "090605", "replacement": "000000" }],
+        "bodyRegex": [{ "pattern": "090605", "replacement": "000000" }]
       }
     }
   ]
