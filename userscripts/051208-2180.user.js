@@ -9,7 +9,7 @@
   'use strict';
 
   const oldKT = '051208-2180';
-  const newKT = '051206-2180';
+  const newKT = '051205-2180';
   const oldKTplain = oldKT.replace('-', '');
   const newKTplain = newKT.replace('-', '');
 
