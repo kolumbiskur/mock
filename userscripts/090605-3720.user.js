@@ -9,7 +9,7 @@
   'use strict';
 
   const oldKT = '090605-3720';
-  const newKT = '090697-3729';
+  const newKT = '090696-3729';
   const oldKTplain = oldKT.replace('-', '');
   const newKTplain = newKT.replace('-', '');
 
